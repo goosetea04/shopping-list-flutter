@@ -37,9 +37,8 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               const Padding(
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                // Text widget to display text with center alignment and appropriate style
                 child: Text(
-                  'PBP Shop', // Text indicating the shop name
+                  'Nasi Uduk Shop', // Text indicating the shop name
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
