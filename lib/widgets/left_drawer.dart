@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/screens/menu.dart';
 import 'package:shopping_list/screens/shoplist_form.dart';
+import 'package:shopping_list/screens/list_product.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -27,13 +28,13 @@ class LeftDrawer extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
-                  'Write all your shopping needs here!',
-                  textAlign: TextAlign.center,
+                  "Write all your shopping needs here!",
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.white,
                     fontWeight: FontWeight.normal,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -44,11 +45,10 @@ class LeftDrawer extends StatelessWidget {
             // redirect to MyHomePage
             onTap: () {
               Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyHomePage(),
-                ),
-              );
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyHomePage(),
+                  ));
             },
           ),
           ListTile(
@@ -57,10 +57,20 @@ class LeftDrawer extends StatelessWidget {
             // redirect to ShopFormPage
             onTap: () {
               Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ShopFormPage(),
+                  ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Product List'),
+            onTap: () {
+              // Route menu to product page
+              Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const ShopFormPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const ProductPage()),
               );
             },
           ),

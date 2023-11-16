@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import drawer widget
 import 'package:shopping_list/widgets/left_drawer.dart';
 import 'package:shopping_list/widgets/shop_card.dart';
 
@@ -7,7 +8,7 @@ class MyHomePage extends StatelessWidget {
 
   final List<ShopItem> items = [
     ShopItem("View Products", Icons.checklist),
-    ShopItem("Add Product", Icons.add_shopping_cart),
+    ShopItem("Add Item", Icons.add_shopping_cart),
     ShopItem("Logout", Icons.logout),
   ];
 
@@ -27,7 +28,10 @@ class MyHomePage extends StatelessWidget {
         title: const Text(
           'Shopping List',
         ),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
+      drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Scrolling wrapper widget
         child: Padding(
@@ -37,8 +41,9 @@ class MyHomePage extends StatelessWidget {
             children: <Widget>[
               const Padding(
                 padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                // Text widget to display text with center alignment and appropriate style
                 child: Text(
-                  'Nasi Uduk Shop', // Text indicating the shop name
+                  'PBP Shop', // Text indicating the shop name
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -64,7 +69,6 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const LeftDrawer(),
     );
   }
 }
